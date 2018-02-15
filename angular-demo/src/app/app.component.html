@@ -1,0 +1,16 @@
+<h3>Angular &amp; RxJS Observables Search Demo</h3>
+
+<form [formGroup]="searchForm">
+  <label for="search">Search YouTube</label>
+  <br />
+  <input formControlName="search" id="search" />
+</form>
+
+<!-- Observable templates/pipes -->
+<div *ngFor="let result of results | async">
+  <a [href]="'https://www.youtube.com/watch?v=' + result.id.videoId" target="_blank">
+    <h3>{{result.snippet.title}}</h3>
+  </a>
+  <p>{{result.snippet.description}}</p>
+  <img [src]="result.snippet.thumbnails.default.url" style="width: 100%; max-width: 250px;" />
+</div>

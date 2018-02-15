@@ -1,0 +1,20 @@
+{
+  "name": "beginner-reactive-programming-with-rxjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "author": "Cory Rylan",
+  "license": "MIT",
+  "dependencies": {
+    "rxjs": "5.5.2"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "3.3.0",
+    "webpack": "3.8.1",
+    "webpack-dev-server": "2.9.4",
+    "typescript": "2.6.1"
+  }
+}
