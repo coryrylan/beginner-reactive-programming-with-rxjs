@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map, filter, tap, switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 import { API_KEY } from './api-key';
