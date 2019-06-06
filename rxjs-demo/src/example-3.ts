@@ -2,7 +2,7 @@
   Example 3: Observables - Multiple Values & Unsubscribing
 */
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 const interval$ = new Observable(observer => {
   let count = 0;

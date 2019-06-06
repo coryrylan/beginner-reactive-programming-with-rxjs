@@ -2,7 +2,7 @@
   Example 2: Observables
 */
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 const observable = new Observable(observer => {
   setTimeout(() => {

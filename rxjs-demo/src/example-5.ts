@@ -2,9 +2,7 @@
   Example 5: Observables and Composing Operators
 */
 
-import { Observable } from 'rxjs/Observable';
-
-import { fromEvent } from 'rxjs/observable/fromEvent';
+import { fromEvent } from 'rxjs';
 import { map, scan, merge } from 'rxjs/operators';
 
 const incrementClicks$ = fromEvent(document.getElementById('increment'), 'click');

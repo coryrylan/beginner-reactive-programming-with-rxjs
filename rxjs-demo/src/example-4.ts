@@ -2,7 +2,7 @@
   Example 4: Observables and Functional Operators (map & filter)
 */
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
 const interval$ = new Observable<number>(observer => {

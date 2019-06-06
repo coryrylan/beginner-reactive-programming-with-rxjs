@@ -9,7 +9,7 @@
   "author": "Cory Rylan",
   "license": "MIT",
   "dependencies": {
-    "rxjs": "5.5.2"
+    "rxjs": "6.3.3"
   },
   "devDependencies": {
     "awesome-typescript-loader": "3.3.0",
