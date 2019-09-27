@@ -1,0 +1,14 @@
+label {
+  display: block;
+}
+
+img {
+  width: 100%;
+  max-width: 200px;
+}
+
+a {
+  display: block;
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+}
