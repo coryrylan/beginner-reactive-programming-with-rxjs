@@ -22,11 +22,11 @@ export class AppComponent {
   results: Observable<{}[]>;
 
   constructor(private http: HttpClient) {
-    this.results = this.search.valueChanges.pipe( // Observable Form
+    this.results = this.search.valueChanges.pipe(
       filter(value => value.length > 2),
       debounceTime(500),
       distinctUntilChanged(),
-      switchMap(query => this.http.get<YouTubeResult>(`${API_URL}?q=${query}&key=${API_KEY}&part=snippet`)), // Observable Http
+      switchMap(query => this.http.get<YouTubeResult>(`${API_URL}?q=${query}&key=${API_KEY}&part=snippet`)),
       map(res => res.items)
     );
   }
