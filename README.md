@@ -1,5 +1,4 @@
-# beginner-reactive-programming-with-rxjs
-Demo Examples my talk "Beginner Reactive Programming with RxJS"
+# Beginner Reactive Programming with RxJS
 
 To start the RxJS Demo run the following
 - `cd rxjs-demo`

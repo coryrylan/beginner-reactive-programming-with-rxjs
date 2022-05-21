@@ -3,13 +3,13 @@
 */
 
 import { fromEvent } from 'rxjs';
-import { map, scan, merge } from 'rxjs/operators';
+import { map, scan, mergeWith } from 'rxjs/operators';
 
 const incrementClicks$ = fromEvent(document.getElementById('increment'), 'click');
 const decrementClicks$ = fromEvent(document.getElementById('decrement'), 'click');
 
 const clicks$ = incrementClicks$.pipe(
-  merge(decrementClicks$),
+  mergeWith(decrementClicks$),
   map((event: any) => parseInt(event.target.value, 10))
 );
 

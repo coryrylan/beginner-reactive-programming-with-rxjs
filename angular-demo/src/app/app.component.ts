@@ -2,14 +2,20 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { map, filter, tap, switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { map, filter, switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 import { API_KEY } from './api-key';
 
-const API_URL = 'https://www.googleapis.com/youtube/v3/search';
+const API_URL = 'https://api.giphy.com/v1/gifs/search';
 
-interface YouTubeResult {
-  items: {}[];
+interface Result {
+  id: string;
+  url: string;
+  images: {
+    preview_gif: {
+      url: string;
+    }
+  };
 }
 
 @Component({
@@ -19,15 +25,15 @@ interface YouTubeResult {
 })
 export class AppComponent {
   search = new FormControl('');
-  results: Observable<{}[]>;
+  results: Observable<Result[]>;
 
   constructor(private http: HttpClient) {
     this.results = this.search.valueChanges.pipe(
       filter(value => value.length > 2),
-      debounceTime(500),
+      debounceTime(600),
       distinctUntilChanged(),
-      switchMap(query => this.http.get<YouTubeResult>(`${API_URL}?q=${query}&key=${API_KEY}&part=snippet`)),
-      map(res => res.items)
+      switchMap(query => this.http.get<any>(`${API_URL}?q=${query}&api_key=${API_KEY}&rating=g&limit=30`)),
+      map(res => res.data as Result[])
     );
   }
 }
