@@ -29,7 +29,7 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {
     this.results = this.search.valueChanges.pipe(
-      filter(value => value.length > 2),
+      filter(value => value !== null && value.length > 2),
       debounceTime(600),
       distinctUntilChanged(),
       switchMap(query => this.http.get<any>(`${API_URL}?q=${query}&api_key=${API_KEY}&rating=g&limit=30`)),
@@ -37,23 +37,3 @@ export class AppComponent {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
